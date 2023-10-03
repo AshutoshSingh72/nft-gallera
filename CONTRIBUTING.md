@@ -1,6 +1,6 @@
 # Contributing to KodaDot: NFT gallery
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-netlify-starter)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://github.com/kodadot/nft-gallery)
 
 KodaDot NFT gallery **has a plan to be builders-owned and become ultimate public good**
 
