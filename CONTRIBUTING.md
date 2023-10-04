@@ -1,6 +1,6 @@
 # Contributing to KodaDot: NFT gallery
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://github.com/kodadot/nft-gallery)
+
 
 KodaDot NFT gallery **has a plan to be builders-owned and become ultimate public good**
 
@@ -10,7 +10,10 @@ If everything goes well, chances that you will be **rewarded are high**.
 
 We might give retro-active reward, where the bounty label wasn't present, **if we like your contribution.**
 
-**For better coordination, please join our [Development channel (#coordination) on [KodaDot Ecosystem Telegram](https://t.me/kodadot_eco)**
+**For better coordination, please join our [Development channel (#coordination) on [KodaDot Ecosystem Telegram](https://t.me/kodadot_eco)**.
+
+## Deploy Kodadot with a Single Click on Netlify
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://github.com/kodadot/nft-gallery)
 
 ## Getting started
 
