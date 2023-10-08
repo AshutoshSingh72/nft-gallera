@@ -110,7 +110,7 @@
       </NeoField>
 
       <!-- Airdrop -->
-       <NeoField v-if="isPolkadot AssetHub"
+       <NeoField v-if="isstatemint"
         :label="`${$t('mint.nft.Airdrop.label')} (optional) *`"
        required
         :error="!form.Airdrop" >
