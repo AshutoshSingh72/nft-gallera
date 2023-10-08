@@ -62,11 +62,11 @@
             @selectedCollection="onCollectionSelected" />
         </div>
       </NeoField>
+      
 <!--Airdrop nft -->
       <NeoField
         :label="`${$t('mint.nft.name.label')} *`"
-        required
-        :error="!form.name">
+        >
         <NeoInput
           v-model="form.name"
           required
