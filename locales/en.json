@@ -508,7 +508,7 @@
         "message": "This can be image, video, audio, 3D model"
       },
       "Airdrop": {
-        "Airdrop": ""Airdrop NFT to an Address",
+        "Airdrop": ""Airdrop",
         "placeholder": "Enter Receipt address",
       },
       "name": {
