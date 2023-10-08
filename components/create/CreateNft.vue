@@ -111,13 +111,13 @@
 
       <!-- Airdrop -->
        <NeoField
-        :label="`${$t('Airdrop')} *`"
+        :label="`${$t('mint.nft.Airdrop.label')} *`"
         required
         :error="!form.name">
         <NeoInput
           v-model="form.name"
           required
-          :placeholder="$t('mint.nft.name.placeholder')" />
+          :placeholder="$t('mint.nft.Airdrop.placeholder')" />
       </NeoField>
 
 
