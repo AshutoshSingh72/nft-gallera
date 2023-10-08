@@ -522,7 +522,7 @@
         "message": "Choose a collection to which you want to mint your NFT."
       },
       "Airdrop": {
-        "label": "Airdrop (optional)",
+        "label": "Airdrop",
         "placeholder": "Enter an address"
       },
       "edition": {
