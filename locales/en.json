@@ -507,10 +507,6 @@
         "label": "Your Awesome Art",
         "message": "This can be image, video, audio, 3D model"
       },
-      "Airdrop": {
-        "Airdrop": "Airdrop",
-        "placeholder": "Enter Receipt address",
-      },
       "name": {
         "label": "Name",
         "placeholder": "Enter NFT name",
