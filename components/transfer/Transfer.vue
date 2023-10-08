@@ -76,7 +76,10 @@
               :size="32"
               data-testid="transfer-sender-full-address" />
             <span class="ml-2">
-             
+              <Identity
+                :address="accountId"
+                hide-identity-popover
+                data-testid="transfer-sender-address" />
             </span>
             <a
               v-clipboard:copy="accountId"
