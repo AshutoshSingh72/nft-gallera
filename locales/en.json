@@ -524,7 +524,7 @@
       "Airdrop": {
         "label": "Airdrop",
         "placeholder": "Enter an address",
-      }
+      },
       "edition": {
         "label": "Copies",
         "placeholder": "Minimum is 1",
