@@ -62,6 +62,18 @@
             @selectedCollection="onCollectionSelected" />
         </div>
       </NeoField>
+<!--Airdrop nft -->
+       <NeoField :label="`${$t('mint.nft.art.label')} *`" :addons="false">
+        <div>
+          <p>{{ $t('mint.nft.art.message') }}</p>
+          <DropUpload
+            v-model="form.file"
+            required
+            expanded
+            preview
+            :label="$t('mint.nft.drop')" />
+        </div>
+      </NeoField>
 
       <!-- list for sale -->
       <NeoField
