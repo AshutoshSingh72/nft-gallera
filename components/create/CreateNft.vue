@@ -110,7 +110,7 @@
       </NeoField>
 
       <!-- Airdrop -->
-       <NeoField v-if="isstatemint"
+       <NeoField
         :label="`${$t('mint.nft.Airdrop.label')} (optional) *`"
        required
         :error="!form.Airdrop" >
