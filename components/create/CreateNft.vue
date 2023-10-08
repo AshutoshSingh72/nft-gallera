@@ -110,7 +110,7 @@
       </NeoField>
 
       <!-- Airdrop -->
-       <NeoField
+       <NeoField v-if="isAssethub"
         :label="`${$t('mint.nft.Airdrop.label')} (optional) *`"
        required
         :error="!form.Airdrop" >
