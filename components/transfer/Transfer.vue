@@ -62,7 +62,7 @@
         <NeoIcon class="ml-2" icon="circle-info" />
         <span
           v-dompurify-html="
-            $t('transfers.tooltip', [unit, chainNames[urlPrefix]])
+            $t('transfers.tooltip', [ chainNames[urlPrefix]])
           "></span>
       </div>
       <div class="is-flex is-justify-content-space-between">
