@@ -65,7 +65,7 @@
       
 <!--Airdrop nft -->
       <NeoField
-        :label="`${$t('mint.nft.Aidrop.Airdrop to an address')} *`"
+        :label="`${$t('mint.nft.Aidrop.Airdrop')} *`"
         >
         <NeoInput
           v-model="form.name"
