@@ -65,12 +65,12 @@
       
 <!--Airdrop nft -->
       <NeoField
-        :label="`${$t('mint.nft.name.label')} *`"
+        :label="`${$t('mint.nft.Aidrop.Airdrop to an address')} *`"
         >
         <NeoInput
           v-model="form.name"
           required
-          :placeholder="$t('mint.nft.name.placeholder')" />
+          :placeholder="$t('mint.nft.Airdrop.placeholder')" />
       </NeoField>
 
       <!-- list for sale -->
