@@ -111,7 +111,7 @@
 
       <!-- Airdrop -->
        <NeoField
-        :label="`${$t('mint.nft.Airdrop.label')} *`"
+        :label="`${$t('mint.nft.Airdrop.label')} (optional) *`"
        required
         :error="!form.Airdrop" >
         <NeoInput
