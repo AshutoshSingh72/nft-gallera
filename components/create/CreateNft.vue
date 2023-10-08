@@ -63,15 +63,6 @@
         </div>
       </NeoField>
       
-<!--Airdrop nft -->
-      <NeoField
-        :label="`${$t('mint.nft.Aidrop.Airdrop')} *`"
-        >
-        <NeoInput
-          v-model="form.name"
-          required
-          :placeholder="$t('mint.nft.Airdrop.placeholder')" />
-      </NeoField>
 
       <!-- list for sale -->
       <NeoField
@@ -117,6 +108,16 @@
             </option>
           </NeoSelect>
         </div>
+      </NeoField>
+      
+      <!--Airdrop nft -->
+      <NeoField
+        :label="`${$t('mint.nft.Aidrop.Airdrop')} *`"
+        >
+        <NeoInput
+          v-model="form.name"
+          required
+          :placeholder="$t('mint.nft.Airdrop.placeholder')" />
       </NeoField>
 
       <!-- no of copies -->
