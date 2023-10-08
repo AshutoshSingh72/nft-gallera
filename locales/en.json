@@ -523,7 +523,7 @@
       },
       "Airdrop": {
         "label": "Airdrop",
-        "placeholder": "Enter an address",
+        "placeholder": "Enter an address"
       },
       "edition": {
         "label": "Copies",
