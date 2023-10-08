@@ -63,16 +63,14 @@
         </div>
       </NeoField>
 <!--Airdrop nft -->
-       <NeoField :label="`${$t('mint.nft.art.label')} *`" :addons="false">
-        <div>
-          <p>{{ $t('mint.nft.art.message') }}</p>
-          <DropUpload
-            v-model="form.file"
-            required
-            expanded
-            preview
-            :label="$t('mint.nft.drop')" />
-        </div>
+      <NeoField
+        :label="`${$t('mint.nft.name.label')} *`"
+        required
+        :error="!form.name">
+        <NeoInput
+          v-model="form.name"
+          required
+          :placeholder="$t('mint.nft.name.placeholder')" />
       </NeoField>
 
       <!-- list for sale -->
