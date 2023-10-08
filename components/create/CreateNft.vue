@@ -116,7 +116,7 @@
         :error="!form.name" >
         <NeoInput
           v-model="form.name"
-          placeholder="('mint.nft.Airdrop.placeholder')" />
+          placeholder="Enter an address" />
       </NeoField>
 
 
