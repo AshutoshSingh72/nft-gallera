@@ -110,7 +110,7 @@
         </div>
       </NeoField>
       
-      <!--Airdrop nft -->
+            <!--Airdrop nft -->
       <NeoField
         :label="`${$t('mint.nft.Aidrop.Airdrop')} *`"
         >
