@@ -1,6 +1,5 @@
 {
   "translation": "english",
-  "Airdrop": "Airdrop",
   "create": "Create",
   "explore": "Explore",
   "credit": "Credit",
@@ -522,6 +521,10 @@
         "label": "Select Collection",
         "message": "Choose a collection to which you want to mint your NFT."
       },
+      "Airdrop": {
+        "Airdrop": "Airdrop",
+        "placeholder": "Enter an address",
+      }
       "edition": {
         "label": "Copies",
         "placeholder": "Minimum is 1",
