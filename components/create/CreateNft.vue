@@ -109,6 +109,18 @@
         </div>
       </NeoField>
 
+      <!-- Airdrop -->
+       <NeoField
+        :label="`${$t('Airdrop')} *`"
+        required
+        :error="!form.name">
+        <NeoInput
+          v-model="form.name"
+          required
+          :placeholder="$t('mint.nft.name.placeholder')" />
+      </NeoField>
+
+
       <!-- no of copies -->
       <NeoField :label="`${$t('mint.nft.copies.label')} (optional)`">
         <div class="w-100">
