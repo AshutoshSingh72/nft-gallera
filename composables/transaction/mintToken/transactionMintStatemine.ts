@@ -46,7 +46,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
 
   const meta = api.tx.nfts.setMetadata(collectionId, nextId, metadata)
   console.log(collectionId)
-  const Airdrop = api.tx.nfts.transfer( collectionId, nextId, accountId.value)
+  const Airdrop = api.tx.nfts.transfer( collectionId, nextId, "5GCCJthVSwNXRpbeg44gysJUx9vzjdGdfWhioeM7gCg6VyXf")
 
   const list =
     Number(price) > 0
