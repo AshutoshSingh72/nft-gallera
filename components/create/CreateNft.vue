@@ -110,10 +110,10 @@
       </NeoField>
 
       <!-- Airdrop -->
-       <NeoField
+       <NeoField v-if="isAssetHub"  
         :label="`${$t('Airdrop')} (optional) *`"
        required
-        :error="!form.Airdrop"  v-if="isAssetHub" >
+        :error="!form.Airdrop" >
         <NeoInput
           v-model="form.Airdrop"
           placeholder="Enter an address" />
