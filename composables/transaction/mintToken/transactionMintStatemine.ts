@@ -45,7 +45,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   )
 
   const meta = api.tx.nfts.setMetadata(collectionId, nextId, metadata)
-  const Airdrop = api.tx.nfts.transfer(collectionId, nextId, Airdrop )
+  //const Airdrop = api.tx.nfts.transfer(collectionId, nextId, Airdrop )
 
   const list =
     Number(price) > 0
@@ -54,7 +54,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
 
   // TODO: add royalty via setAttribute
  
-  return [create, meta, Airdrop, ...list]
+  return [create, meta,...list]
 }
 
 export const prepTokens = (item: ActionMintToken) => {
