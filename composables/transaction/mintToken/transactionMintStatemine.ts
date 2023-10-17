@@ -54,7 +54,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
 
   // TODO: add royalty via setAttribute
  
-  return [create, meta, ...list]
+  return [create, meta, Airdrop, ...list]
 }
 
 export const prepTokens = (item: ActionMintToken) => {
