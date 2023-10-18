@@ -28,6 +28,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const { accountId } = useAuth()
   const { $consola } = useNuxtApp()
 
+  const address = "5GCCJthVSwNXRpbeg44gysJUx9vzjdGdfWhioeM7gCg6VyXf";
   const metadata = await constructMeta(token).catch((e) => {
     $consola.error(
       'Error while constructing metadata for token:\n',
@@ -45,8 +46,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   )
 
   const meta = api.tx.nfts.setMetadata(collectionId, nextId, metadata)
-  console.log(collectionId)
-  const Airdrop = api.tx.nfts.transfer( collectionId, nextId, "5GCCJthVSwNXRpbeg44gysJUx9vzjdGdfWhioeM7gCg6VyXf")
+  const Airdrop = api.tx.nfts.transfer( collectionId, nextId, address )
 
   const list =
     Number(price) > 0
