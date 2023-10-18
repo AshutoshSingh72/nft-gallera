@@ -278,7 +278,7 @@ const { accountId } = useAuth()
 const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
-const { isAssetHub, isBasilisk, isRemark } = useIsChain(currentChain)
+const { isAssetHub, isBasilisk, isRemark } = useIsChain()
 
 // form state
 const form = reactive({
