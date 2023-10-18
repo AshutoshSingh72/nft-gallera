@@ -283,9 +283,9 @@ const submitButtonLabel = computed(() => {
 const onCollectionSelected = (collection) => {
   selectedCollection.value = collection
 }
-  export { const Airdrop = (Airdrop) => {
+ const Airdrop = (Airdrop) => {
   form.Airdrop = Airdrop
-}}
+}
   
 const imagePreview = computed(() => {
   if (form.file) {
