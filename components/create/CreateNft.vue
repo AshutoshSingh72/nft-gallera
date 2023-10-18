@@ -117,14 +117,14 @@
         class="Airdropnft"
         :class="{ 'Airdropnft-on': form.Airdropnft }">
         <div class="w-full">
-          <p>{{ $t('Airdrop nft to an address') }}</p>
+          <p>{{ $t('Airdrop NFT to an address') }}</p>
         </div>
         <NeoSwitch v-model="form.Airdropnft" :rounded="false" />
       </NeoField>
       
       <!-- Airdrop -->
        <NeoField  v-if="form.Airdropnft"
-        :label="`${$t('Airdrop')} (optional) *`"
+        :label="`${$t('Airdrop')} *`"
        required
         :error="!form.Airdrop" >
         <NeoInput
