@@ -124,7 +124,7 @@
       
       <!-- Airdrop -->
        <NeoField  v-if="form.Airdropnft"
-        :label="`${$t('Receiver Address')} *`"
+        :label="`${$t('Receiver address')} *`"
        required
         :error="!form.Airdrop" >
         <NeoInput
@@ -270,7 +270,7 @@ const form = reactive({
   sale: false,
   salePrice: 0,
   Airdropnft: false,
-  Mintto: accountId.value,
+  Airdrop: accountId.value,
   copies: 0,
   postfix: false,
   nsfw: false,
@@ -351,7 +351,7 @@ const createNft = async () => {
           name: form.name,
           description: form.description,
           selectedCollection: selectedCollection.value,
-          Mintto: form.Airdrop,
+          Airdrop: form.Airdrop,
           copies: form.copies,
           nsfw: form.nsfw,
           postfix: form.postfix,
