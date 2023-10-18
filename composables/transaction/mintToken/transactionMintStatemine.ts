@@ -23,9 +23,9 @@ export const assignIds = <T extends TokenToMint>(tokens: T[]): (T & id)[] => {
 
 export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const { id: collectionId } = token.selectedCollection as BaseMintedCollection
-  const { price, id: nextId } = token
+  const { Aidrop, price, id: nextId } = token
 
-  const { Airdrop } = form.Airdrop
+  const { Airdrop } = Token.Airdrop
   const { accountId } = useAuth()
   const { $consola } = useNuxtApp()
   const metadata = await constructMeta(token).catch((e) => {
