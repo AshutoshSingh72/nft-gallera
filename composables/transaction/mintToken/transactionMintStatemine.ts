@@ -23,7 +23,7 @@ export const assignIds = <T extends TokenToMint>(tokens: T[]): (T & id)[] => {
 
 export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const { id: collectionId } = token.selectedCollection as BaseMintedCollection
-  const { Mintto, price, id: nextId } = token
+  const { Airdrop, price, id: nextId } = token
 
   const { accountId } = useAuth()
   const { $consola } = useNuxtApp()
@@ -39,7 +39,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const create = api.tx.nfts.mint(
     collectionId,
     nextId,
-    Mintto,
+    Airdrop,
     undefined
   )
 
