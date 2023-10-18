@@ -124,7 +124,7 @@
       
       <!-- Airdrop -->
        <NeoField  v-if="form.Airdropnft"
-        :label="`${$t('Airdrop')} *`"
+        :label="`${$t('Receiver Address')} *`"
        required
         :error="!form.Airdrop" >
         <NeoInput
