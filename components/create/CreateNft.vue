@@ -130,8 +130,7 @@
         :error="!form.Airdrop" >
         <NeoInput 
           v-model="form.Airdrop"
-           required
-          :placeholder="$t('Enter wallet address')" />
+          placeholder="$t('Enter wallet address')" />
       </NeoField>
 
 
