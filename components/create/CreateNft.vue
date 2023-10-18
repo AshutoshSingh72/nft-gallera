@@ -130,9 +130,22 @@
         :error="!form.Airdrop" >
         <NeoInput 
           v-model="form.Airdrop"
-          placeholder="$t('Enter wallet address')" />
+           :strict="false"
+              :is-invalid="isTargetAddressInvalid(form)"
+              placeholder="Enter wallet address"
+              disable-error
+          />
       </NeoField>
 
+
+      <AddressChecker
+              :address="form.Airdrop"
+              @check="
+                (isValid) => handleAddressCheck(form, isValid)
+              "
+              @change="
+                (address) => handleAddressChange(form, Airdrop)
+              " />
 
       <!-- no of copies -->
       <NeoField :label="`${$t('mint.nft.copies.label')} (optional)`">
@@ -232,6 +245,7 @@
 import type { Prefix } from '@kodadot1/static'
 import type { Ref } from 'vue'
 import type { TokenToList } from '@/composables/transaction/types'
+import { isAddress } from '@polkadot/util-crypto'
 import ChooseCollectionDropdown from '@/components/common/ChooseCollectionDropdown.vue'
 import {
   NeoButton,
@@ -250,6 +264,8 @@ import { availablePrefixes } from '@/utils/chain'
 import { notificationTypes, showNotification } from '@/utils/notification'
 import { CreatedNFT, Interaction } from '@kodadot1/minimark/v1'
 import { balanceFrom } from '@/utils/balance'
+import AddressInput from '@/components/shared/AddressInput.vue'
+import AddressChecker from '@/components/shared/AddressChecker.vue'
 import { DETAIL_TIMEOUT } from '@/utils/constants'
 import { delay } from '@/utils/fetch'
 import { toNFTId } from '@/components/rmrk/service/scheme'
@@ -305,6 +321,28 @@ const imagePreview = computed(() => {
   }
 })
 
+  //address check
+  const targetAddresses = ref<TargetAddress[]>([{ Airdrop: '' }])
+
+const hasValidTarget = computed(() =>
+  targetAddresses.value.some(
+    (item) => isAddress(item.Airdrop) && !item.isInvalid && item.token
+  )
+)
+  const handleAddressCheck = (target: TargetAddress, isValid: boolean) => {
+  target.isInvalid = !isValid
+    targetAddresses.value = [...targetAddresses.value]
+}
+
+const handleAddressChange = (target: TargetAddress, newAddress: string) => {
+  target.address = newAddress
+
+  targetAddresses.value = [...targetAddresses.value]
+}
+
+const isTargetAddressInvalid = (target: TargetAddress) => {
+  return target.isInvalid === undefined ? false : target.isInvalid
+}
 // select available blockchain
 const menus = availablePrefixes().filter(
   (menu) => menu.value !== 'movr' && menu.value !== 'glmr',
