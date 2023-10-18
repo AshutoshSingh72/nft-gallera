@@ -129,11 +129,6 @@
        required
         :error="!form.Airdrop" >
         <NeoInput 
-          v-else-if="addressCheck && showAddressCheck"
-      variant="fail"
-      :title="$t(`transfers.invalidAddress.${addressCheck.type}.title`)"
-      data-testid="addresschecker-infobox-invalid"
-      @close="onClose"
           v-model="form.Airdrop"
           placeholder="Enter an address" />
       </NeoField>
