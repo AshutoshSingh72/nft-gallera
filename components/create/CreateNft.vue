@@ -110,7 +110,6 @@
       </NeoField>
 
       <!-- Airdrop -->
-      <NeoField v-if="isAssetHub"></NeoField>
        <NeoField 
         :label="`${$t('Airdrop')} (optional) *`"
        required
