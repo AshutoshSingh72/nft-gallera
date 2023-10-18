@@ -111,7 +111,7 @@
 
      <!--Airdrop to an address-->
       <NeoField
-        :key="currentChain"
+        :key="isAssetHub"
         :label="$t('Airdrop NFT')"
         required
         class="Airdropnft"
@@ -124,7 +124,7 @@
       
       <!-- Airdrop -->
        <NeoField 
-         v-if="form.Airdropnft, !isAssetHub"
+         v-if="form.Airdropnft"
         :label="`${$t('Receiver address')} *`"
        required
         :error="!form.Airdrop" >
