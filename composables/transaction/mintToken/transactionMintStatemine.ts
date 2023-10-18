@@ -4,7 +4,6 @@ import { TokenToMint } from '../types'
 import { constructMeta } from './constructMeta'
 import { calculateFees, expandCopies, transactionFactory } from './utils'
 import { canSupport } from '@/utils/support'
-import { Airdrop } from ./components/create/CreateNft.vue'
 
 type id = { id: number }
 
