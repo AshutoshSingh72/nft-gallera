@@ -130,7 +130,12 @@
         :error="!form.Airdrop" >
         <NeoInput 
           v-model="form.Airdrop"
-          placeholder="Enter an address" />
+          :is-invalid="isYourAddress"
+            label=""
+            class="is-flex-1"
+            placeholder="Enter wallet address"
+            with-address-check
+            @check="handleAddressCheck" />
       </NeoField>
 
 
