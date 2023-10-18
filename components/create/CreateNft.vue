@@ -109,8 +109,21 @@
         </div>
       </NeoField>
 
+     <!--Airdrop to an address-->
+      <NeoField
+        :key="currentChain"
+        :label="$t('Airdrop NFT')"
+        required
+        class="Airdropnft"
+        :class="{ 'Airdropnft-on': form.Airdropnft }">
+        <div class="w-full">
+          <p>{{ $t('Airdrop nft to an address') }}</p>
+        </div>
+        <NeoSwitch v-model="form.Airdropnft" :rounded="false" />
+      </NeoField>
+      
       <!-- Airdrop -->
-       <NeoField 
+       <NeoField  v-if="form.Airdropnft"
         :label="`${$t('Airdrop')} (optional) *`"
        required
         :error="!form.Airdrop" >
