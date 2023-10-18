@@ -131,8 +131,6 @@
         <NeoInput 
           v-model="form.Airdrop"
           :is-invalid="isYourAddress"
-            label=""
-            class="is-flex-1"
           required : placeholder="Enter wallet address"
             with-address-check
             @check="handleAddressCheck" />
