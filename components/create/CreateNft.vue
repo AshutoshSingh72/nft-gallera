@@ -124,7 +124,7 @@
       
       <!-- Airdrop -->
        <NeoField 
-         v-if="form.Airdropnft" v-if="!isAssetHub"
+         v-if="form.Airdropnft, !isAssetHub"
         :label="`${$t('Receiver address')} *`"
        required
         :error="!form.Airdrop" >
