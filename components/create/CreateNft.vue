@@ -111,7 +111,7 @@
 
      <!--Airdrop to an address-->
       <NeoField
-        v-if="isAssetHub? 'Ahp' : chainSymbol"
+        v-if="isAssetHub"
         :key="currentChain"
         :label="$t('Airdrop NFT')"
         required
@@ -278,6 +278,7 @@ const { accountId } = useAuth()
 const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
+const { isAssetHub, isBasilisk, isRemark } = useIsChain(currentChain)
 
 // form state
 const form = reactive({
