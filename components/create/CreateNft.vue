@@ -111,7 +111,7 @@
 
      <!--Airdrop to an address-->
       <NeoField
-        v-if="currentChain == ahp"
+        v-if="isAssetHub"
         :key="currentChain"
         :label="$t('Airdrop NFT')"
         required
@@ -355,7 +355,7 @@ const selectChain = ref(chainByPrefix.value?.value || menus[0].value)
 
 // get/set current chain/prefix
 const currentChain = computed(() => selectChain.value as Prefix)
-const { isBasilisk, isRemark } = useIsChain(currentChain)
+const { isAssetHub, isBasilisk, isRemark } = useIsChain(currentChain)
 watch(currentChain, () => {
   // reset some state on chain change
   form.salePrice = 0
