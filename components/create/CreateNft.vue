@@ -286,7 +286,6 @@ const onCollectionSelected = (collection) => {
   const Airdrop = (Airdrop) => {
   form.Airdrop = Airdrop
 }
-export { Airdrop };
   
 const imagePreview = computed(() => {
   if (form.file) {
