@@ -110,7 +110,8 @@
       </NeoField>
 
       <!-- Airdrop -->
-       <NeoField v-if="isAssetHub ? 'ahp' : chainSymbol"  
+      <NeoField v-if="isAssetHub"></NeoField>
+       <NeoField 
         :label="`${$t('Airdrop')} (optional) *`"
        required
         :error="!form.Airdrop" >
