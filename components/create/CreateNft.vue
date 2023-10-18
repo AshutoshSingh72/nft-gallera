@@ -133,7 +133,7 @@
           :is-invalid="isYourAddress"
             label=""
             class="is-flex-1"
-            placeholder="Enter wallet address"
+          required : placeholder="Enter wallet address"
             with-address-check
             @check="handleAddressCheck" />
       </NeoField>
