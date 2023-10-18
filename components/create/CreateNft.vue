@@ -111,7 +111,7 @@
 
      <!--Airdrop to an address-->
       <NeoField
-        v-if="!isBasilisk && !isRemark && isAssetHub"
+        v-if="isAssetHub? 'Ahp' : chainSymbol"
         :key="currentChain"
         :label="$t('Airdrop NFT')"
         required
