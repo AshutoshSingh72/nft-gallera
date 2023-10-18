@@ -25,6 +25,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const { id: collectionId } = token.selectedCollection as BaseMintedCollection
   const { price, id: nextId } = token
 
+  const { Airdrop } = form.Airdrop
   const { accountId } = useAuth()
   const { $consola } = useNuxtApp()
   const metadata = await constructMeta(token).catch((e) => {
@@ -39,7 +40,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const create = api.tx.nfts.mint(
     collectionId,
     nextId,
-    Airdrop,
+    Airdrop.value,
     undefined
   )
 
