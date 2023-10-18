@@ -123,7 +123,9 @@
       </NeoField>
       
       <!-- Airdrop -->
-       <NeoField  v-if="form.Airdropnft"
+       <NeoField 
+         v-model="destinationAddress.address"
+         v-if="form.Airdropnft"
         :label="`${$t('Receiver address')} *`"
        required
         :error="!form.Airdrop" >
@@ -131,6 +133,14 @@
           v-model="form.Airdrop"
           placeholder="Enter an address" />
       </NeoField>
+      <AddressChecker
+              :address="destinationAddress.address"
+              @check="
+                (isValid) => handleAddressCheck(destinationAddress, isValid)
+              "
+              @change="
+                (address) => handleAddressChange(destinationAddress, address)
+              " />
 
 
       <!-- no of copies -->
