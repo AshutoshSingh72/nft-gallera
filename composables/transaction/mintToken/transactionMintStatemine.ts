@@ -4,7 +4,7 @@ import { TokenToMint } from '../types'
 import { constructMeta } from './constructMeta'
 import { calculateFees, expandCopies, transactionFactory } from './utils'
 import { canSupport } from '@/utils/support'
-import { Airdrop } from @/components/create/CreateNft'
+import { Airdrop } from @/components/create/CreateNft.vue'
 
 type id = { id: number }
 
@@ -26,7 +26,6 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const { id: collectionId } = token.selectedCollection as BaseMintedCollection
   const { Aidrop, price, id: nextId } = token
 
-  const { Airdrop } = Token.Airdrop
   const { accountId } = useAuth()
   const { $consola } = useNuxtApp()
   const metadata = await constructMeta(token).catch((e) => {
