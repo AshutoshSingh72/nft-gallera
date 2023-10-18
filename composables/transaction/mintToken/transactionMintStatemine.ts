@@ -24,11 +24,10 @@ export const assignIds = <T extends TokenToMint>(tokens: T[]): (T & id)[] => {
 export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const { id: collectionId } = token.selectedCollection as BaseMintedCollection
   const { price, id: nextId } = token
-  const { Airdrop: form.Airdrop } = Airdrop
 
   const { accountId } = useAuth()
   const { $consola } = useNuxtApp()
-
+  const mint_to = "5DtQgR8B8RyBa9xKWDCsKMUUhXp7N5RxFCZx39ddi1zGtbbt";
   const metadata = await constructMeta(token).catch((e) => {
     $consola.error(
       'Error while constructing metadata for token:\n',
@@ -41,12 +40,11 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const create = api.tx.nfts.mint(
     collectionId,
     nextId,
-    accountId.value,
+    mint_to,
     undefined
   )
 
   const meta = api.tx.nfts.setMetadata(collectionId, nextId, metadata)
-  const Airdrop = api.tx.nfts.transfer(collectionId, nextId, Airdrop)
 
   const list =
     Number(price) > 0
@@ -55,7 +53,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
 
   // TODO: add royalty via setAttribute
  
-  return [create, meta, Airdrop,...list]
+  return [create, meta,...list]
 }
 
 export const prepTokens = (item: ActionMintToken) => {
