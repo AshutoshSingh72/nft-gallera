@@ -19,7 +19,7 @@
       <div
         class="is-flex is-justify-content-space-between is-align-items-center mb-2">
         <p class="has-text-weight-bold is-size-3">
-          {{ $t('transfer') }} 
+          {{ $t('transfer') }} {{ unit }}
         </p>
         <NeoDropdown
           position="bottom-left"
