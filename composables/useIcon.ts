@@ -7,6 +7,8 @@ export const useIcon = () => {
         return '/token/dot.svg'
       case 'ksm':
         return '/token/ksm.svg'
+      case 'usdt':
+        return '/token/usdt.svg'
       default:
         return '/token/ksm.svg'
     }
