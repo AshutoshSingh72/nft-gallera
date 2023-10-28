@@ -279,7 +279,7 @@ const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
 
-  const app = new Vue({
+  const app = Vue({
   el: '#app',
   data: {
     file: ''
