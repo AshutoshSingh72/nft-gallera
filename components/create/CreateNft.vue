@@ -300,7 +300,7 @@ var form = reactive({
   },
 })
 
-var form = new Vue({
+var form = Vue({
    file: null,
   name: '',
   description: '',
