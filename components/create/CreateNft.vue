@@ -34,7 +34,7 @@
         :error="!form.name">
         <div id="app">
         <NeoInput
-          v-model="form.name"
+          v-model="name"
           required
           :placeholder="$t('mint.nft.name.placeholder')" />
       </NeoField>
@@ -286,13 +286,13 @@ const { decimals } = useChain()
     name: ''
   },
   mounted() {
-    if (localStorage.form.name) {
-      this.name = localStorage.form.name;
+    if (localStorage.name) {
+      this.name = localStorage.name;
     }
   },
   watch: {
     name(newName) {
-      localStorage.form.name = newName;
+      localStorage.name = newName;
     }
   }
 });
