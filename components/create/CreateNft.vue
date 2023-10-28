@@ -316,6 +316,17 @@ const submitButtonLabel = computed(() => {
 
 const onCollectionSelected = (collection) => {
   selectedCollection.value = collection
+  localStorage.setItem('file', form.file),
+  localStorage.setItem('name', form.name),
+  localStorage.setItem('description', form.description),
+  localStorage.setItem('selectedCollection', selectedCollection.value),
+  localStorage.setItem('copies', form.copies),
+  localStorage.setItem('nsfw', form.nsfw),
+  localStorage.setItem('postfix', form.postfix),
+  localStorage.setItem('price', balanceFrom(form.salePrice, decimals.value)),
+  localStorage.setItem('tags', form.tags),
+  localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
+  localStorage.setItem('royalty', form.royalty)
 }
   
 const imagePreview = computed(() => {
@@ -419,19 +430,6 @@ const createNft = async () => {
     $consola.error(error)
   }
 }
-if (form.name.value) {
-          localStorage.setItem('file', form.file),
-  localStorage.setItem('name', form.name),
-  localStorage.setItem('description', form.description),
-  localStorage.setItem('selectedCollection', selectedCollection.value),
-  localStorage.setItem('copies', form.copies),
-  localStorage.setItem('nsfw', form.nsfw),
-  localStorage.setItem('postfix', form.postfix),
-  localStorage.setItem('price', balanceFrom(form.salePrice, decimals.value)),
-  localStorage.setItem('tags', form.tags),
-  localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
-  localStorage.setItem('royalty', form.royalty)
-  }
 // currently, on rmrk we need to list price manually
 watchEffect(async () => {
   if (
