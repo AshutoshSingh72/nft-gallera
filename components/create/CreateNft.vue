@@ -301,23 +301,18 @@ const form = reactive({
     amount: 0,
     address: accountId.value,
   }
+    localStorage.setItem('file', form.file)
+  localStorage.setItem('name', form.name)
+  localStorage.setItem('description', form.description)
+  localStorage.setItem('selectedCollection', selectedCollection.value)
+  localStorage.setItem('copies', form.copies)
+  localStorage.setItem('nsfw', form.nsfw)
+  localStorage.setItem('postfix', form.postfix)
+  localStorage.setItem('price', balanceFrom(form.salePrice, decimals.value))
+  localStorage.setItem('tags', form.tags)
+  localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount))
+  localStorage.setItem('royalty', form.royalty)
 })
-const app = reactive({
-  el: '#app',
-  data: {
-    name: ''
-  },
-  mounted() {
-    if (localStorage.name) {
-      this.name = localStorage.name;
-    }
-  },
-  watch: {
-    name(newName) {
-      localStorage.name = newName;
-    }
-  }
-});
   
 const { isLogIn } = useAuth()
 const { $i18n } = useNuxtApp()
