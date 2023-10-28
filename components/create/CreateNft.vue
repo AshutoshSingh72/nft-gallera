@@ -297,6 +297,16 @@ const form = reactive({
     amount: 0,
     address: accountId.value,
   },
+   mounted() {
+    if (localStorage.name) {
+      this.name = localStorage.name;
+    }
+  },
+  watch: {
+    name(newName) {
+      localStorage.name = newName;
+    }
+  }
 })
 
   
