@@ -16,7 +16,7 @@
 
       <!-- nft art -->
       <NeoField :label="`${$t('mint.nft.art.label')} *`" :addons="false">
-        <div>
+        <div id="app">
           <p>{{ $t('mint.nft.art.message') }}</p>
           <DropUpload
             v-model="form.file"
@@ -278,6 +278,23 @@ const { accountId } = useAuth()
 const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
+
+  const app = new Vue({
+  el: '#app',
+  data: {
+    form.file: ''
+  },
+  mounted() {
+    if (localStorage.form.file) {
+      this.form.file = localStorage.form.file;
+    }
+  },
+  watch: {
+    name(newfile) {
+      localStorage.form.file = newfile;
+    }
+  }
+});
 
 // form state
 const form = reactive({
