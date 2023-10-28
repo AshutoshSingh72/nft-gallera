@@ -36,9 +36,11 @@
           v-model="form.name"
           required
           :placeholder="$t('mint.nft.name.placeholder')" />
-        My name is <input v-model="name">
       </NeoField>
 
+      <div id="app">
+  My name is <input v-model="name">
+</div>
       
       <!-- nft description -->
       <NeoField :label="`${$t('mint.nft.description.label')} (optional)`">
@@ -298,8 +300,14 @@ const form = reactive({
   royalty: {
     amount: 0,
     address: accountId.value,
+  }
+})
+const app = reactive({
+  el: '#app',
+  data: {
+    name: ''
   },
-   mounted() {
+  mounted() {
     if (localStorage.name) {
       this.name = localStorage.name;
     }
@@ -309,8 +317,7 @@ const form = reactive({
       localStorage.name = newName;
     }
   }
-})
-
+});
   
 const { isLogIn } = useAuth()
 const { $i18n } = useNuxtApp()
