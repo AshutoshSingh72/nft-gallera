@@ -62,6 +62,17 @@
           :maxlength="inputLengthLimit" />
       </NeoField>
 
+      <NeoField :label="`${$t('mint.blockchain.label')} *`">
+        <div class="w-100">
+          <p>{{ $t('mint.blockchain.message') }}</p>
+          <NeoSelect v-model="selectChain" class="mt-3" expanded required>
+            <option v-for="menu in menus" :key="menu.value" :value="menu.value">
+              {{ menu.text }}
+            </option>
+          </NeoSelect>
+        </div>
+      </NeoField>
+      
       <NeoField label="Any Socials?" class="mb-4">
         <div class="is-flex is-flex-direction-column">
           <p>{{ $t('identity.socialsDescription') }}</p>
@@ -85,7 +96,6 @@
             :maxlength="inputLengthLimit" />
         </NeoField>
       </Transition>
-
       <hr />
 
       <p class="subtitle is-size-6">
