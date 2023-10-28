@@ -299,20 +299,6 @@ const form = reactive({
   }
 })
 
-if (name.value) {
-          localStorage.setItem('file', form.file),
-  localStorage.setItem('name', form.name),
-  localStorage.setItem('description', form.description),
-  localStorage.setItem('selectedCollection', selectedCollection.value),
-  localStorage.setItem('copies', form.copies),
-  localStorage.setItem('nsfw', form.nsfw),
-  localStorage.setItem('postfix', form.postfix),
-  localStorage.setItem('price', balanceFrom(form.salePrice, decimals.value)),
-  localStorage.setItem('tags', form.tags),
-  localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
-  localStorage.setItem('royalty', form.royalty)
-  }
-
   
 const { isLogIn } = useAuth()
 const { $i18n } = useNuxtApp()
@@ -422,7 +408,19 @@ const createNft = async () => {
     )) as unknown as {
       createdNFTs?: Ref<CreatedNFT[]>
     }
-
+if (form.name) {
+          localStorage.setItem('file', form.file),
+  localStorage.setItem('name', form.name),
+  localStorage.setItem('description', form.description),
+  localStorage.setItem('selectedCollection', selectedCollection.value),
+  localStorage.setItem('copies', form.copies),
+  localStorage.setItem('nsfw', form.nsfw),
+  localStorage.setItem('postfix', form.postfix),
+  localStorage.setItem('price', balanceFrom(form.salePrice, decimals.value)),
+  localStorage.setItem('tags', form.tags),
+  localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
+  localStorage.setItem('royalty', form.royalty)
+  }
     if (isRemark.value && form.sale && form.salePrice) {
       createdItems.value = minted?.createdNFTs?.value
       transactionStatus.value = 'list'
