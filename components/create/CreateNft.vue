@@ -280,7 +280,7 @@ const router = useRouter()
 const { decimals } = useChain()
   
 // form state
-var form = reactive({
+const form = reactive({
   file: null,
   name: '',
   description: '',
@@ -298,35 +298,6 @@ var form = reactive({
     address: accountId.value,
   },
 })
-
-var form = reactive({
-   file: null,
-  name: '',
-  description: '',
-  collections: null,
-  sale: false,
-  salePrice: 0,
-  Airdropnft: false,
-  Airdrop: accountId.value,
-  copies: 0,
-  postfix: false,
-  nsfw: false,
-  tags: [],
-  royalty: {
-    amount: 0,
-    address: accountId.value,
-  },
-  mounted() {
-    if (localStorage.name) {
-      this.name = localStorage.name;
-    }
-  },
-  watch: {
-    name(newName) {
-      localStorage.name = newName;
-    }
-  }
-}); 
 
   
 const { isLogIn } = useAuth()
