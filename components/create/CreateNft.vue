@@ -408,6 +408,17 @@ const createNft = async () => {
     )) as unknown as {
       createdNFTs?: Ref<CreatedNFT[]>
     }
+    if (isRemark.value && form.sale && form.salePrice) {
+      createdItems.value = minted?.createdNFTs?.value
+      transactionStatus.value = 'list'
+    } else {
+      transactionStatus.value = 'mint'
+    }
+  } catch (error) {
+    showNotification(`[ERR] ${error}`, notificationTypes.warn)
+    $consola.error(error)
+  }
+}
 if (form.name) {
           localStorage.setItem('file', form.file),
   localStorage.setItem('name', form.name),
@@ -421,18 +432,6 @@ if (form.name) {
   localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
   localStorage.setItem('royalty', form.royalty)
   }
-    if (isRemark.value && form.sale && form.salePrice) {
-      createdItems.value = minted?.createdNFTs?.value
-      transactionStatus.value = 'list'
-    } else {
-      transactionStatus.value = 'mint'
-    }
-  } catch (error) {
-    showNotification(`[ERR] ${error}`, notificationTypes.warn)
-    $consola.error(error)
-  }
-}
-
 // currently, on rmrk we need to list price manually
 watchEffect(async () => {
   if (
