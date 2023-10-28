@@ -300,8 +300,12 @@ const form = reactive({
   royalty: {
     amount: 0,
     address: accountId.value,
-  },
-    localStorage.setItem('file', form.file),
+  }
+})
+
+
+ if ( file && name && description && collections) {
+          localStorage.setItem('file', form.file),
   localStorage.setItem('name', form.name),
   localStorage.setItem('description', form.description),
   localStorage.setItem('selectedCollection', selectedCollection.value),
@@ -312,7 +316,12 @@ const form = reactive({
   localStorage.setItem('tags', form.tags),
   localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
   localStorage.setItem('royalty', form.royalty)
-})
+        } else {
+         return {
+       console.log("error fill fields")
+        }
+
+
   
 const { isLogIn } = useAuth()
 const { $i18n } = useNuxtApp()
