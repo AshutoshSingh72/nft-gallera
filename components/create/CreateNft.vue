@@ -317,7 +317,6 @@ const form = reactive({
   localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
   localStorage.setItem('royalty', form.royalty)
         } else {
-         return {
        console.log("error fill fields")
         }
 
