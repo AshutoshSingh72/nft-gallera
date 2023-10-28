@@ -282,7 +282,7 @@ const { decimals } = useChain()
   const app = new Vue({
   el: '#app',
   data: {
-    form.file: ''
+    file: ''
   },
   mounted() {
     if (localStorage.form.file) {
