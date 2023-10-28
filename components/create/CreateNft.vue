@@ -37,10 +37,6 @@
           required
           :placeholder="$t('mint.nft.name.placeholder')" />
       </NeoField>
-
-      <div id="app">
-  My name is <input v-model="name">
-</div>
       
       <!-- nft description -->
       <NeoField :label="`${$t('mint.nft.description.label')} (optional)`">
@@ -304,7 +300,6 @@ const form = reactive({
 })
 
   const Draft = () => {
-    form.name = string 
           localStorage.setItem('file', form.file),
   localStorage.setItem('name', form.name),
   localStorage.setItem('description', form.description),
