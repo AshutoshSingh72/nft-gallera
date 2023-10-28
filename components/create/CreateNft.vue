@@ -282,24 +282,6 @@ const { accountId } = useAuth()
 const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
-
-
-  const Draft = {
-          localStorage.setItem('file', form.file),
-  localStorage.setItem('name', form.name),
-  localStorage.setItem('description', form.description),
-  localStorage.setItem('selectedCollection', selectedCollection.value),
-  localStorage.setItem('copies', form.copies),
-  localStorage.setItem('nsfw', form.nsfw),
-  localStorage.setItem('postfix', form.postfix),
-  localStorage.setItem('price', balanceFrom(form.salePrice, decimals.value)),
-  localStorage.setItem('tags', form.tags),
-  localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
-  localStorage.setItem('royalty', form.royalty)
-  }
-
-
-
   
 // form state
 const form = reactive({
@@ -320,6 +302,21 @@ const form = reactive({
     address: accountId.value,
   }
 })
+
+  const Draft = () => {
+    form.name = string 
+          localStorage.setItem('file', form.file),
+  localStorage.setItem('name', form.name),
+  localStorage.setItem('description', form.description),
+  localStorage.setItem('selectedCollection', selectedCollection.value),
+  localStorage.setItem('copies', form.copies),
+  localStorage.setItem('nsfw', form.nsfw),
+  localStorage.setItem('postfix', form.postfix),
+  localStorage.setItem('price', balanceFrom(form.salePrice, decimals.value)),
+  localStorage.setItem('tags', form.tags),
+  localStorage.setItem('hasRoyalty', Boolean(form.royalty.amount)),
+  localStorage.setItem('royalty', form.royalty)
+  }
 
   
 const { isLogIn } = useAuth()
