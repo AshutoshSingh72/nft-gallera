@@ -321,7 +321,7 @@ const onCollectionSelected = (collection) => {
 const imagePreview = computed(() => {
   if (form.file) {
     return URL?.createObjectURL(form.file)
-    localStorage.setItem('file', form.file)
+    localStorage.setItem('name', form.name.value)
   }
 })
 
