@@ -278,7 +278,7 @@ const { accountId } = useAuth()
 const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
-
+var Vue = require('vue');
   
 // form state
 var form = reactive({
