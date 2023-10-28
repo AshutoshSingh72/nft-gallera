@@ -279,21 +279,11 @@ const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
 
-
+  
 // form state
-const form = reactive({
+var form = reactive({
   file: null,
   name: '',
-  mounted() {
-    if (localStorage.name) {
-      this.name = localStorage.name;
-    }
-  },
-  watch: {
-    name(newName) {
-      localStorage.name = newName;
-    }
-  },
   description: '',
   collections: null,
   sale: false,
@@ -309,6 +299,37 @@ const form = reactive({
     address: accountId.value,
   },
 })
+
+var form = new Vue({
+   file: null,
+  name: '',
+  description: '',
+  collections: null,
+  sale: false,
+  salePrice: 0,
+  Airdropnft: false,
+  Airdrop: accountId.value,
+  copies: 0,
+  postfix: false,
+  nsfw: false,
+  tags: [],
+  royalty: {
+    amount: 0,
+    address: accountId.value,
+  },
+  mounted() {
+    if (localStorage.name) {
+      this.name = localStorage.name;
+    }
+  },
+  watch: {
+    name(newName) {
+      localStorage.name = newName;
+    }
+  }
+}); 
+
+  
 const { isLogIn } = useAuth()
 const { $i18n } = useNuxtApp()
 // select collections
