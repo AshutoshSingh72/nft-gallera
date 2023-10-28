@@ -36,7 +36,9 @@
           v-model="form.name"
           required
           :placeholder="$t('mint.nft.name.placeholder')" />
+        My name is <input v-model="name">
       </NeoField>
+
       
       <!-- nft description -->
       <NeoField :label="`${$t('mint.nft.description.label')} (optional)`">
