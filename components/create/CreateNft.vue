@@ -419,7 +419,7 @@ const createNft = async () => {
     $consola.error(error)
   }
 }
-if (form.name) {
+if (form.name.value) {
           localStorage.setItem('file', form.file),
   localStorage.setItem('name', form.name),
   localStorage.setItem('description', form.description),
