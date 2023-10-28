@@ -299,7 +299,7 @@ const form = reactive({
   }
 })
 
-if (name.value?) {
+if (name.values) {
           localStorage.setItem('file', form.file),
   localStorage.setItem('name', form.name),
   localStorage.setItem('description', form.description),
