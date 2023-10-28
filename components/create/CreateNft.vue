@@ -32,13 +32,12 @@
         :label="`${$t('mint.nft.name.label')} *`"
         required
         :error="!form.name">
-        <div id="app">
         <NeoInput
-          v-model="name"
+          v-model="form.name"
           required
           :placeholder="$t('mint.nft.name.placeholder')" />
       </NeoField>
-</div>
+      
       <!-- nft description -->
       <NeoField :label="`${$t('mint.nft.description.label')} (optional)`">
         <NeoInput
@@ -280,11 +279,11 @@ const { transaction, status, isLoading, blockNumber } = useTransaction()
 const router = useRouter()
 const { decimals } = useChain()
 
-  const app = Vue({
-  el: '#app',
-  data: {
-    name: ''
-  },
+
+// form state
+const form = reactive({
+  file: null,
+  name: '',
   mounted() {
     if (localStorage.name) {
       this.name = localStorage.name;
@@ -294,13 +293,7 @@ const { decimals } = useChain()
     name(newName) {
       localStorage.name = newName;
     }
-  }
-});
-
-// form state
-const form = reactive({
-  file: null,
-  name: '',
+  },
   description: '',
   collections: null,
   sale: false,
