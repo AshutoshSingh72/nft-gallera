@@ -106,7 +106,7 @@
         <NeoField>
           <div class="monospace">
             <p class="has-text-weight-medium is-size-6 has-text-info">
-              <span>{{ $t('mint.deposit') }}:</span>
+              <span>{{ $t('Reserved Deposit') }}:</span>
               <span data-testid="collection-deposit"
                 >{{ totalCollectionDeposit }} {{ chainSymbol }}</span
               >
