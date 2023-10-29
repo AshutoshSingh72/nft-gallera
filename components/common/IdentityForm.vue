@@ -383,6 +383,10 @@ const isValidTwitterHandle = (handle: string) => {
   // select available blockchain
 const chainByPrefix = menus.find((menu) => menu.value === urlPrefix.value)
 const selectBlockchain = ref(chainByPrefix?.value || menus[0].value)
+  const currentChain = computed(() => {
+  return selectBlockchain.value as Prefix
+})
+
   
 const socialCheck = {
   [IdentitySocialField.Twitter]: isValidTwitterHandle,
