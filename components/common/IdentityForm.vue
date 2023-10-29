@@ -62,7 +62,6 @@
           :maxlength="inputLengthLimit" />
       </NeoField>
 
-      <!-- select blockchain -->
       <NeoField :label="`${$t('mint.blockchain.label')} *`">
         <div class="w-full">
           <p>{{ $t('mint.blockchain.message') }}</p>
@@ -150,6 +149,7 @@
 
 <script lang="ts" setup>
 import { notificationTypes, showNotification } from '@/utils/notification'
+import { availablePrefixes } from '@/utils/chain'
 import {
   NeoButton,
   NeoField,
@@ -162,7 +162,6 @@ import IdentityConfirmModal from '@/components/common/identity/IdentityConfirmMo
 import TransactionLoader from '@/components/shared/TransactionLoader.vue'
 import { useIdentityStore } from '@/stores/identity'
 import Money from '@/components/shared/format/Money.vue'
-import { availablePrefixes } from '@/utils/chain'
 import { useFiatStore } from '@/stores/fiat'
 import { calculateUsdFromToken } from '@/utils/calculation'
 import format from '@/utils/format/balance'
@@ -380,7 +379,6 @@ const isValidTwitterHandle = (handle: string) => {
   return pattern.test(handle)
 }
 
-  // select available blockchain
 const chainByPrefix = menus.find((menu) => menu.value === urlPrefix.value)
 const selectBlockchain = ref(chainByPrefix?.value || menus[0].value)
   const currentChain = computed(() => {
