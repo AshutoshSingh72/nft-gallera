@@ -381,16 +381,8 @@ const isValidTwitterHandle = (handle: string) => {
 }
 
   // select available blockchain
-const menus = availablePrefixes().filter(
-  (menu) => menu.value !== 'movr' && menu.value !== 'glmr',
-)
-const chainByPrefix = computed(() =>
-  menus.find((menu) => menu.value === urlPrefix.value),
-)
-const selectChain = ref(chainByPrefix.value?.value || menus[0].value)
-// get/set current chain/prefix
-const currentChain = computed(() => selectChain.value as Prefix)
-const { isAssetHub, isBasilisk, isRemark } = useIsChain(currentChain)
+const chainByPrefix = menus.find((menu) => menu.value === urlPrefix.value)
+const selectBlockchain = ref(chainByPrefix?.value || menus[0].value)
   
 const socialCheck = {
   [IdentitySocialField.Twitter]: isValidTwitterHandle,
