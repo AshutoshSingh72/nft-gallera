@@ -62,15 +62,14 @@
               :active="active" />
           </template>
 
-          <!-- related: #5792 -->
-          <!-- <div v-if="isOwner">
+          <div v-if="isOwner">
               <NeoDropdownItem>
                 {{ $i18n.t('moreActions.delete') }}
               </NeoDropdownItem>
               <NeoDropdownItem>
                 {{ $i18n.t('moreActions.customize') }}
               </NeoDropdownItem>
-            </div> -->
+            </div>
           <NeoDropdownItem disabled>
             {{ $i18n.t('moreActions.reportCollection') }}
           </NeoDropdownItem>
