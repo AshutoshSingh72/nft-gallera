@@ -382,7 +382,9 @@ const chainByPrefix = computed(() =>
   menus.find((menu) => menu.value === urlPrefix.value),
 )
 const selectChain = ref(chainByPrefix.value?.value || menus[0].value)
-
+// get/set current chain/prefix
+const currentChain = computed(() => selectChain.value as Prefix)
+const { isAssetHub, isBasilisk, isRemark } = useIsChain(currentChain)
   
 const socialCheck = {
   [IdentitySocialField.Twitter]: isValidTwitterHandle,
