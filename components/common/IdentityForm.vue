@@ -171,7 +171,7 @@ const { $i18n } = useNuxtApp()
 
 const { accountId } = useAuth()
 const { decimals } = useChain()
-const { urlPrefix } = usePrefix()
+const { urlPrefix, setUrlPrefix } = usePrefix()
 const { fetchFiatPrice, getCurrentTokenValue } = useFiatStore()
 const identityStore = useIdentityStore()
 const { howAboutToExecute, isLoading, initTransactionLoader, status } =
