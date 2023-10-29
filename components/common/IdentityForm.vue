@@ -62,10 +62,15 @@
           :maxlength="inputLengthLimit" />
       </NeoField>
 
+      <!-- select blockchain -->
       <NeoField :label="`${$t('mint.blockchain.label')} *`">
-        <div class="w-100">
+        <div class="w-full">
           <p>{{ $t('mint.blockchain.message') }}</p>
-          <NeoSelect v-model="selectChain" class="mt-3" expanded required>
+          <NeoSelect
+            v-model="selectBlockchain"
+            class="mt-3"
+            data-testid="collection-chain"
+            expanded>
             <option v-for="menu in menus" :key="menu.value" :value="menu.value">
               {{ menu.text }}
             </option>
