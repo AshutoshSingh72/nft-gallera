@@ -162,6 +162,7 @@ import IdentityConfirmModal from '@/components/common/identity/IdentityConfirmMo
 import TransactionLoader from '@/components/shared/TransactionLoader.vue'
 import { useIdentityStore } from '@/stores/identity'
 import Money from '@/components/shared/format/Money.vue'
+import { availablePrefixes } from '@/utils/chain'
 import { useFiatStore } from '@/stores/fiat'
 import { calculateUsdFromToken } from '@/utils/calculation'
 import format from '@/utils/format/balance'
