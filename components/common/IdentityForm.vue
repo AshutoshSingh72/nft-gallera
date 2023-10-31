@@ -156,6 +156,7 @@ import {
   NeoInput,
   NeoSelect,
   NeoTooltip,
+  NeoSwitch
 } from '@kodadot1/brick'
 import PillTabs, { Icon, PillTab } from '@/components/shared/PillTabs.vue'
 import IdentityConfirmModal from '@/components/common/identity/IdentityConfirmModal.vue'
