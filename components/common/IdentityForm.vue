@@ -156,7 +156,7 @@ import {
   NeoTooltip,
   NeoSwitch
 } from '@kodadot1/brick'
-import BasicSwitch from '@/components/shared/form/BasicSwitch.vue'
+//import BasicSwitch from '@/components/shared/form/BasicSwitch.vue'
 import PillTabs, { Icon, PillTab } from '@/components/shared/PillTabs.vue'
 import IdentityConfirmModal from '@/components/common/identity/IdentityConfirmModal.vue'
 import TransactionLoader from '@/components/shared/TransactionLoader.vue'
