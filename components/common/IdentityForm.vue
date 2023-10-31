@@ -154,6 +154,7 @@ import {
   NeoField,
   NeoIcon,
   NeoInput,
+  NeoSelect,
   NeoTooltip,
 } from '@kodadot1/brick'
 import PillTabs, { Icon, PillTab } from '@/components/shared/PillTabs.vue'
