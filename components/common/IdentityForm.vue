@@ -165,7 +165,6 @@ import Money from '@/components/shared/format/Money.vue'
 import { useFiatStore } from '@/stores/fiat'
 import { calculateUsdFromToken } from '@/utils/calculation'
 import format from '@/utils/format/balance'
-import { availablePrefixes } from '@/utils/chain'
 
 const { $i18n } = useNuxtApp()
 
