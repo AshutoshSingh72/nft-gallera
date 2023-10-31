@@ -144,7 +144,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { Prefix } from '@kodadot1/static'
 import { notificationTypes, showNotification } from '@/utils/notification'
 import { availablePrefixes } from '@/utils/chain'
 import {
@@ -156,7 +155,6 @@ import {
   NeoTooltip,
   NeoSwitch
 } from '@kodadot1/brick'
-//import BasicSwitch from '@/components/shared/form/BasicSwitch.vue'
 import PillTabs, { Icon, PillTab } from '@/components/shared/PillTabs.vue'
 import IdentityConfirmModal from '@/components/common/identity/IdentityConfirmModal.vue'
 import TransactionLoader from '@/components/shared/TransactionLoader.vue'
