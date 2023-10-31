@@ -146,6 +146,7 @@
 
 <script lang="ts" setup>
 import type { Prefix } from '@kodadot1/static'
+import type { Ref } from 'vue'
 import { notificationTypes, showNotification } from '@/utils/notification'
 import { availablePrefixes } from '@/utils/chain'
 import {
