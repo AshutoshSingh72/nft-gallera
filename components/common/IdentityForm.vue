@@ -66,7 +66,7 @@
           <NeoSelect
             v-model="selectBlockchain"
             class="mt-3"
-            data-testid="select-chain"
+            data-testid="collection-chain"
             expanded>
             <option v-for="menu in menus" :key="menu.value" :value="menu.value">
               {{ menu.text }}
