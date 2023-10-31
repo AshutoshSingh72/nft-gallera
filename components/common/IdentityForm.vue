@@ -63,6 +63,8 @@
       </NeoField>
 
       <NeoField :label="`${$t('mint.blockchain.label')} *`">
+        <div class="w-full">
+          <p>{{ $t('mint.blockchain.message') }}</p>
           <NeoSelect
             v-model="selectBlockchain"
             class="mt-3"
@@ -72,6 +74,7 @@
               {{ menu.text }}
             </option>
           </NeoSelect>
+        </div>
       </NeoField>
       
       <NeoField label="Any Socials?" class="mb-4">
