@@ -63,19 +63,16 @@
       </NeoField>
 
       <NeoField :label="`${$t('mint.blockchain.label')} *`">
-        <div class="w-full">
+        <div class="w-100">
           <p>{{ $t('mint.blockchain.message') }}</p>
-          <NeoSelect
-            v-model="selectBlockchain"
-            class="mt-3"
-            data-testid="collection-chain"
-            expanded>
+          <NeoSelect v-model="selectChain" class="mt-3" expanded required>
             <option v-for="menu in menus" :key="menu.value" :value="menu.value">
               {{ menu.text }}
             </option>
           </NeoSelect>
         </div>
       </NeoField>
+
       
       <NeoField label="Any Socials?" class="mb-4">
         <div class="is-flex is-flex-direction-column">
@@ -148,6 +145,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { Prefix } from '@kodadot1/static'
 import { notificationTypes, showNotification } from '@/utils/notification'
 import { availablePrefixes } from '@/utils/chain'
 import {
@@ -170,7 +168,7 @@ const { $i18n } = useNuxtApp()
 
 const { accountId } = useAuth()
 const { decimals } = useChain()
-const { urlPrefix, setUrlPrefix } = usePrefix()
+const { urlPrefix } = usePrefix()
 const { fetchFiatPrice, getCurrentTokenValue } = useFiatStore()
 const identityStore = useIdentityStore()
 const { howAboutToExecute, isLoading, initTransactionLoader, status } =
@@ -378,10 +376,28 @@ const isValidTwitterHandle = (handle: string) => {
   return pattern.test(handle)
 }
 
-const chainByPrefix = menus.find((menu) => menu.value === urlPrefix.value)
-const selectBlockchain = ref(chainByPrefix?.value || menus[0].value)
-  const currentChain = computed(() => {
-  return selectBlockchain.value as Prefix
+const menus = availablePrefixes().filter(
+  (menu) => menu.value !== 'movr' && menu.value !== 'glmr',
+)
+const chainByPrefix = computed(() =>
+  menus.find((menu) => menu.value === urlPrefix.value),
+)
+const selectChain = ref(chainByPrefix.value?.value || menus[0].value)
+
+watch(urlPrefix, (value) => {
+  selectChain.value = value
+})
+
+  const currentChain = computed(() => selectChain.value as Prefix)
+const { isBasilisk, isRemark, isRmrk } = useIsChain(currentChain)
+watch(currentChain, () => {
+  // reset some state on chain change
+  form.salePrice = 0
+  form.royalty.amount = 0
+
+  if (currentChain.value !== urlPrefix.value) {
+    setUrlPrefix(currentChain.value as Prefix)
+  }
 })
 
   
