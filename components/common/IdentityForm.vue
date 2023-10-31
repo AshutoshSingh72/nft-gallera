@@ -395,9 +395,6 @@ watch(urlPrefix, (value) => {
   const currentChain = computed(() => selectChain.value as Prefix)
 const { isBasilisk, isRemark, isRmrk } = useIsChain(currentChain)
 watch(currentChain, () => {
-  // reset some state on chain change
-  form.salePrice = 0
-  form.royalty.amount = 0
 
   if (currentChain.value !== urlPrefix.value) {
     setUrlPrefix(currentChain.value as Prefix)
