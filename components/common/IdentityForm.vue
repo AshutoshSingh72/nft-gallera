@@ -2,7 +2,7 @@
   <section>
     <form @submit.prevent>
       <h1 class="title is-size-3 mb-8 is-capitalized">
-        {{ $t('identity.setOn', [getChainName(currentChain.value)]) }}
+        {{ $t('identity.setOn', [getChainName(currentChain)]) }}
       </h1>
 
       <div v-if="hasIdentity" class="is-size-6">
@@ -246,7 +246,7 @@ const activeSocials = computed(() => {
 
 const isMobile = computed(() => useWindowSize().width.value <= 764)
 const disabled = computed(
-  () => identity.value.display.value === '' || isLoading.value
+  () => identity.value.display.value === ''
 )
 
 const depositFormatted = computed(() =>
