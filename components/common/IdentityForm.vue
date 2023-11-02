@@ -2,7 +2,7 @@
   <section>
     <form @submit.prevent>
       <h1 class="title is-size-3 mb-8 is-capitalized">
-        {{ $t('identity.setOn', [getChainName(identityPrefix)]) }}
+        {{ $t('identity.setOn', currentChain.value) }}
       </h1>
 
       <div v-if="hasIdentity" class="is-size-6">
@@ -114,7 +114,7 @@
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.create')"
-        :disabled="disabled && isAssetHub"
+        :disabled="disabled || isAssetHub"
         :loading="isLoading"
         expanded
         @click="openConfirmModal" />
