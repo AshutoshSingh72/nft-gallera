@@ -111,6 +111,7 @@
       </p>
 
       <NeoButton
+        v-if="isAssetHub"
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.create')"
@@ -383,13 +384,12 @@ const chainByPrefix = computed(() =>
   menus.find((menu) => menu.value === urlPrefix.value),
 )
 const selectChain = ref(chainByPrefix.value?.value || menus[0].value)
-//const { isAssetHub } = useIsChain(currentChain)
 watch(urlPrefix, (value) => {
   selectChain.value = value
 })
 
   const currentChain = computed(() => selectChain.value as Prefix)
-const { isBasilisk, isRemark, isRmrk } = useIsChain(currentChain)
+const { isAssetHub } = useIsChain(currentChain)
 watch(currentChain, () => {
 
   if (currentChain.value !== urlPrefix.value) {
