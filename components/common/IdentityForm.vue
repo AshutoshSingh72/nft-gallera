@@ -111,7 +111,7 @@
       </p>
 
       <NeoButton
-        v-if="isAssetHub" : Disable
+        v-if="isAssetHub": disabled="isActive"
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.create')"
