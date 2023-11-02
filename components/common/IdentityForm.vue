@@ -31,10 +31,10 @@
         <hr class="my-7" />
       </div>
 
-      <NeoField :label="`${$t('Select Blockchain')} *`">
+      <NeoField v-if"!isAssetHub" :label="`${$t('Select Blockchain')} *`">
         <div class="w-100">
           <NeoSelect v-model="selectChain" class="mt-3" expanded required>
-            <option v-if"!isAssetHub" v-for="menu in menus" :key="menu.value" :value="menu.value">
+            <option v-for="menu in menus" :key="menu.value" :value="menu.value">
               {{ menu.text }}
             </option>
           </NeoSelect>
