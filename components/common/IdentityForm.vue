@@ -33,7 +33,7 @@
 
       <NeoField :label="`${$t('Select Blockchain')} *`">
         <div class="w-100">
-          <NeoSelect v-model="selectChain" class="mt-3" expanded required>
+          <NeoSelect v-model="selectChain" class="mt-3" expanded required :validation-message="$t('Select chain is required')">
             <option v-for="menu in menus" :key="menu.value" :value="menu.value">
               {{ menu.text }}
             </option>
