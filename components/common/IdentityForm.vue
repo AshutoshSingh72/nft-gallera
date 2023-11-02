@@ -31,6 +31,16 @@
         <hr class="my-7" />
       </div>
 
+      <NeoField :label="`${$t('Select Blockchain')} *`">
+        <div class="w-100">
+          <NeoSelect v-model="selectChain" class="mt-3" expanded required>
+            <option v-for="menu in menus" :key="menu.value" :value="menu.value">
+              {{ menu.text }}
+            </option>
+          </NeoSelect>
+        </div>
+      </NeoField>
+
       <NeoField label="Handle" class="mb-5">
         <NeoInput
           v-model="identity.display.value"
@@ -60,16 +70,6 @@
           v-model="identity.web.value"
           placeholder="https://example.com"
           :maxlength="inputLengthLimit" />
-      </NeoField>
-
-      <NeoField :label="`${$t('Select Blockchain')} *`">
-        <div class="w-100">
-          <NeoSelect v-model="selectChain" class="mt-3" expanded required>
-            <option v-for="menu in menus" :key="menu.value" :value="menu.value">
-              {{ menu.text }}
-            </option>
-          </NeoSelect>
-        </div>
       </NeoField>
 
       
