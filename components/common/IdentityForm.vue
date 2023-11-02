@@ -31,7 +31,7 @@
         <hr class="my-7" />
       </div>
 
-      <NeoField v-if"!isAssetHub" :label="`${$t('Select Blockchain')} *`">
+      <NeoField :label="`${$t('Select Blockchain')} *`">
         <div class="w-100">
           <NeoSelect v-model="selectChain" class="mt-3" expanded required>
             <option v-for="menu in menus" :key="menu.value" :value="menu.value">
@@ -377,7 +377,7 @@ const isValidTwitterHandle = (handle: string) => {
 }
 
 const menus = availablePrefixes().filter(
-  (menu) => menu.value !== 'movr' && menu.value !== 'glmr',
+  (menu) => menu.value !== 'movr' && menu.value !== 'glmr' && menu.value !== 'ahk' && menu.value !== 'ahp',
 )
 const chainByPrefix = computed(() =>
   menus.find((menu) => menu.value === urlPrefix.value),
