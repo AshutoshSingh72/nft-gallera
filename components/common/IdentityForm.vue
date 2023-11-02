@@ -114,8 +114,7 @@
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.create')"
-        v-if="isAssetHub"
-        :disabled="disabled"
+        :disabled="isAssetHub"
         :loading="isLoading"
         expanded
         @click="openConfirmModal" />
