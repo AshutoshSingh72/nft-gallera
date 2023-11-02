@@ -2,7 +2,7 @@
   <section>
     <form @submit.prevent>
       <h1 class="title is-size-3 mb-8 is-capitalized">
-        {{ $t('identity.setOn', currentChain.value) }}
+        {{ $t('identity.setOn', [getChainName(currentChain.value)]) }}
       </h1>
 
       <div v-if="hasIdentity" class="is-size-6">
