@@ -384,7 +384,7 @@ const chainByPrefix = computed(() =>
   menus.find((menu) => menu.value === urlPrefix.value),
 )
 const selectChain = ref(chainByPrefix.value?.value || menus[0].value)
-const { isAssetHub, isBasilisk, isRemark } = useIsChain(currentChain)
+const { isAssetHub } = useIsChain(currentChain)
 watch(urlPrefix, (value) => {
   selectChain.value = value
 })
