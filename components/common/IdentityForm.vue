@@ -33,8 +33,8 @@
 
       <NeoField :label="`${$t('Select Blockchain')} *`">
         <div class="w-100">
-          <NeoSelect v-if"!isAssetHub" v-model="selectChain" class="mt-3" expanded required>
-            <option v-for="menu in menus" :key="menu.value" :value="menu.value">
+          <NeoSelect v-model="selectChain" class="mt-3" expanded required>
+            <option v-if"!isAssetHub" v-for="menu in menus" :key="menu.value" :value="menu.value">
               {{ menu.text }}
             </option>
           </NeoSelect>
@@ -114,7 +114,7 @@
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.create')"
-        :disabled="disabled || isAssetHub"
+        :disabled="disabled"
         :loading="isLoading"
         expanded
         @click="openConfirmModal" />
