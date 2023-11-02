@@ -113,7 +113,7 @@
       <NeoButton
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
-        :label="$t('identity.create')"
+        {{ Createidentity }}
         :disabled="disabled"
         :loading="isLoading"
         expanded
@@ -223,6 +223,7 @@ const socialTabs = ref<PillTab[]>([
 const deposit = ref('0')
 const inputLengthLimit = ref(32)
 
+const Createidentity = 'Create Identity'
 const {
   identity: identityData,
   identityApi,
