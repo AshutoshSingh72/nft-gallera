@@ -223,7 +223,7 @@ const socialTabs = ref<PillTab[]>([
 const deposit = ref('0')
 const inputLengthLimit = ref(32)
 
-const Createidentity = 'Create Identity'
+var Createidentity = 'Create Identity'
 const {
   identity: identityData,
   identityApi,
@@ -293,6 +293,7 @@ const setIdentityValue = (values: Record<string, string>) => {
 const hasIdentity = computed(() => {
   const { display, legal, web, twitter, riot, email } = identityData.value
   return (
+    this.Createidentity = "Update Identity",
     accountId.value &&
     Boolean(display || legal || web || twitter || riot || email)
   )
