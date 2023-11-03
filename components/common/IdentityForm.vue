@@ -292,7 +292,7 @@ const setIdentityValue = (values: Record<string, string>) => {
 
 const hasIdentity = computed(() => {
   const { display, legal, web, twitter, riot, email } = identityData.value,
-  var Createidentity = "Update Identity"
+  this.Createidentity = "Update Identity"
   return (
     accountId.value &&
     Boolean(display || legal || web || twitter || riot || email)
