@@ -113,7 +113,7 @@
       <NeoButton
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
-        :label="$t('Create Identity')"
+        :label={{ $t(Create Identity) }}
         :disabled="disabled"
         :loading="isLoading"
         expanded
