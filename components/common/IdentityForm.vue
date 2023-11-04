@@ -296,7 +296,7 @@ const hasIdentity = computed(() => {
 
 var Createidentity = 'Create Identity';
 
-if (hasIdentity) {
+if (hasIdentity.value) {
   Createidentity = 'lol';
 }
 
