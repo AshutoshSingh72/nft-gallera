@@ -111,9 +111,10 @@
       </p>
 
       <NeoButton
+        v-if="hasIdentity"
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
-        :label="$t(Createidentity)"
+        :label="$t('identity.create')"
         :disabled="disabled"
         :loading="isLoading"
         expanded
@@ -294,11 +295,6 @@ const hasIdentity = computed(() => {
   return accountId.value && (display || legal || web || twitter || riot || email);
 });
 
-var Createidentity = 'Create Identity';
-
-if (hasIdentity.value) {
-  Createidentity = 'Update Identity';
-}
 const handleUrlPrefixChange = async () => {
   deposit.value = await fetchDeposit()
 
