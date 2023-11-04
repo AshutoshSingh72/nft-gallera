@@ -299,7 +299,7 @@ var Createidentity = 'Create Identity';
 if (hasIdentity.value) {
   Createidentity = 'lol';
 }
-
+console.log(hasIdentity.value)
 const handleUrlPrefixChange = async () => {
   deposit.value = await fetchDeposit()
 
