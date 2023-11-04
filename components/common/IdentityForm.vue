@@ -296,13 +296,12 @@ const hasIdentity = computed(() => {
     Boolean(display || legal || web || twitter || riot || email)
   )
 })
-var Createidentity = 'Create Identity' {
+var Createidentity = 'Create Identity';
   if(hasIdentity == true){
     return (
       this.Createidentity = 'lol'
       )
   }
-}
 
 const handleUrlPrefixChange = async () => {
   deposit.value = await fetchDeposit()
