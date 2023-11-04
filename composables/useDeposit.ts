@@ -1,5 +1,6 @@
 import type { ComputedRef } from 'vue/types'
 import type { PalletBalancesAccountData } from '@polkadot/types/lookup'
+import { TokenToMint } from '../types'
 
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto'
 import { CHAINS, type Prefix } from '@kodadot1/static'
