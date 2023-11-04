@@ -255,8 +255,7 @@ const activeSocials = computed(() => {
 })
 
 const isMobile = computed(() => useWindowSize().width.value <= 764)
-const disabled = computed(
-  () => identity.value.display.value === '' || !isAssetHub
+const disabled = !isAssetHub
 )
 
 const depositFormatted = computed(() =>
