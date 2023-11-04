@@ -111,10 +111,19 @@
       </p>
 
       <NeoButton
-        v-if="hasIdentity"
+        v-if="!hasIdentity"
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.create')"
+        :disabled="disabled"
+        :loading="isLoading"
+        expanded
+        @click="openConfirmModal" />
+      <NeoButton
+        v-if="hasIdentity"
+        class="is-flex is-flex-grow-1 fixed-height"
+        variant="k-accent"
+        :label="$t('identity.update')"
         :disabled="disabled"
         :loading="isLoading"
         expanded
