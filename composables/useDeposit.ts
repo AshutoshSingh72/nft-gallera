@@ -60,7 +60,7 @@ export default function (prefix: ComputedRef<Prefix>) {
         false
       )
       totalItemDeposit.value = format(
-        metadataDeposit.value + itemDeposit.value, * copies, + existentialDeposit.value,
+        metadataDeposit.value + itemDeposit.value * copies, + existentialDeposit.value,
         chain.tokenDecimals,
         false
       )
