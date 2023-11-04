@@ -290,18 +290,15 @@ const setIdentityValue = (values: Record<string, string>) => {
 }
 
 const hasIdentity = computed(() => {
-  const { display, legal, web, twitter, riot, email } = identityData.value
-  return (
-    accountId.value &&
-    Boolean(display || legal || web || twitter || riot || email)
-  )
-})
+  const { display, legal, web, twitter, riot, email } = identityData.value;
+  return accountId.value && (display || legal || web || twitter || riot || email);
+});
+
 var Createidentity = 'Create Identity';
-  if(hasIdentity == true){
-    return (
-      this.Createidentity = 'lol'
-      )
-  }
+
+if (hasIdentity) {
+  Createidentity = 'lol';
+}
 
 const handleUrlPrefixChange = async () => {
   deposit.value = await fetchDeposit()
