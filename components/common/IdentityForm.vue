@@ -32,11 +32,13 @@
       </div>
 
       <NeoField :label="`${$t('Select Blockchain')} *`">
+        <div class="w-100">
           <NeoSelect v-model="selectChain" class="mt-3" expanded required :validation-message="$t('Select chain is required')">
             <option v-for="menu in menus" :key="menu.value" :value="menu.value">
               {{ menu.text }}
             </option>
           </NeoSelect>
+          </div>
       </NeoField>
 
       <NeoField label="Handle" class="mb-5">
@@ -295,9 +297,8 @@ const hasIdentity = computed(() => {
 var Createidentity = 'Create Identity';
 
 if (hasIdentity.value) {
-  Createidentity = 'lol';
+  Createidentity = 'Update Identity';
 }
-console.log(hasIdentity.value)
 const handleUrlPrefixChange = async () => {
   deposit.value = await fetchDeposit()
 
