@@ -28,7 +28,7 @@ export default function (prefix: ComputedRef<Prefix>) {
 
   const chainSymbol = ref('')
 
-  watchEffect(async (token: TokenToMint) => {
+  watchEffect(async (token: TokenToMint & id, api) => {
     const { copies } = token
     console.log(copies)
     if (prefix.value) {
