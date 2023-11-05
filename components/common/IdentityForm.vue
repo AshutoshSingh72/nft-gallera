@@ -115,7 +115,7 @@
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.create')"
-        :disabled="disabled && isAssetHub"
+        :disabled="disabled || isAssetHub"
         :loading="isLoading"
         expanded
         @click="openConfirmModal" />
@@ -384,7 +384,7 @@ const isValidTwitterHandle = (handle: string) => {
 }
 
 const menus = availablePrefixes().filter(
-  (menu) => menu.value !== 'movr' && menu.value !== 'glmr',
+  (menu) => menu.value !== 'movr' && menu.value !== 'glmr' && menu.value !== 'ahp' && menu.value !== 'ahk',
 )
 const chainByPrefix = computed(() =>
   menus.find((menu) => menu.value === urlPrefix.value),
