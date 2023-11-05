@@ -384,7 +384,7 @@ const isValidTwitterHandle = (handle: string) => {
 }
 
 const menus = availablePrefixes().filter(
-  (menu) => menu.value !== 'movr' && menu.value !== 'glmr' && menu.value !== 'ahk' && menu.value !== 'ahp',
+  (menu) => menu.value !== 'movr' && menu.value !== 'glmr',
 )
 const chainByPrefix = computed(() =>
   menus.find((menu) => menu.value === urlPrefix.value),
