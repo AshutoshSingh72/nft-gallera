@@ -11,8 +11,7 @@ import {
 } from '@/utils/api/bsx/query'
 import format from '@/utils/format/balance'
 
-export default function (prefix: ComputedRef<Prefix>, token: TokenToMint) {
-  const { copies } = token
+export default function (prefix: ComputedRef<Prefix>) {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
@@ -29,7 +28,8 @@ export default function (prefix: ComputedRef<Prefix>, token: TokenToMint) {
 
   const chainSymbol = ref('')
 
-  watchEffect(async () => {
+  watchEffect(async (token: TokenToMint) => {
+    const { copies } = token
     if (prefix.value) {
       const api = await apiInstanceByPrefix(prefix.value)
       const chain = CHAINS[prefix.value]
