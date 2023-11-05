@@ -30,6 +30,7 @@ export default function (prefix: ComputedRef<Prefix>) {
 
   watchEffect(async (token: TokenToMint) => {
     const { copies } = token
+    console.log(copies)
     if (prefix.value) {
       const api = await apiInstanceByPrefix(prefix.value)
       const chain = CHAINS[prefix.value]
