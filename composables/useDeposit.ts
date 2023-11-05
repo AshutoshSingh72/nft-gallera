@@ -58,7 +58,7 @@ export default function (prefix: ComputedRef<Prefix>) {
         chain.tokenDecimals,
         false
       )
-      export const numofcopies = async( token: TokenToMint ) {
+     const numofcopies = async( token: TokenToMint ) {
         const { copies } = token
       totalItemDeposit.value = format(
         metadataDeposit.value + itemDeposit.value * copies, + existentialDeposit.value,
