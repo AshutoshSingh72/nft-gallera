@@ -28,7 +28,7 @@ export default function (prefix: ComputedRef<Prefix>) {
 
   const chainSymbol = ref('')
 
-  export watchEffect(async (token: TokenToMint) => {
+  watchEffect(async (token: TokenToMint) => {
     const { copies } = token
     if (prefix.value) {
       const api = await apiInstanceByPrefix(prefix.value)
@@ -60,7 +60,7 @@ export default function (prefix: ComputedRef<Prefix>) {
         false
       )
       totalItemDeposit.value = format(
-        metadataDeposit.value + itemDeposit.value * copies, + existentialDeposit.value,
+        metadataDeposit.value + itemDeposit.value + copies.value + existentialDeposit.value,
         chain.tokenDecimals,
         false
       )
