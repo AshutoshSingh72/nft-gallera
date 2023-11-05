@@ -12,6 +12,7 @@ import {
 import format from '@/utils/format/balance'
 
 export default function (prefix: ComputedRef<Prefix>, token: TokenToMint) {
+  const { copies } = token
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
@@ -29,7 +30,6 @@ export default function (prefix: ComputedRef<Prefix>, token: TokenToMint) {
   const chainSymbol = ref('')
 
   watchEffect(async () => {
-    const { copies } = token
     if (prefix.value) {
       const api = await apiInstanceByPrefix(prefix.value)
       const chain = CHAINS[prefix.value]
