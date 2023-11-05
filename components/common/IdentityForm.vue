@@ -124,7 +124,7 @@
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
         :label="$t('identity.update')"
-        :disabled="disabled"
+        :disabled="disabled && isAssetHub"
         :loading="isLoading"
         expanded
         @click="openConfirmModal" />
@@ -256,7 +256,7 @@ const activeSocials = computed(() => {
 
 const isMobile = computed(() => useWindowSize().width.value <= 764)
 const disabled = computed(
-  () => isAssetHub,
+  () => ,
 )
 
 const depositFormatted = computed(() =>
