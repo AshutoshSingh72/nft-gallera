@@ -38,7 +38,7 @@ export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
 
   const create = api.tx.nfts.mint(
     collectionId,
-    nextId,
+    copies,
     Airdrop,
     undefined
   )
