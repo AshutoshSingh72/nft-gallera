@@ -12,7 +12,7 @@ import {
 import format from '@/utils/format/balance'
 
 
-export default function async (prefix: ComputedRef<Prefix>) {
+export const Deposit = async (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) => {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
@@ -29,7 +29,7 @@ export default function async (prefix: ComputedRef<Prefix>) {
   
   const chainSymbol = ref('')
 
-  watchEffect(async (token: TokenToMint & id, api) => {
+  watchEffect(async () => {
     const copies = token.copies;
     console.log(copies)
     if (prefix.value) {
@@ -62,8 +62,9 @@ export default function async (prefix: ComputedRef<Prefix>) {
         false
       )
       totalItemDeposit.value = format(
-        metadataDeposit.value + itemDeposit.value + existentialDeposit.value * copies,
+        metadataDeposit.value + itemDeposit.value + existentialDeposit.value,
         chain.tokenDecimals,
+        copies,
         false,
       )
     }
