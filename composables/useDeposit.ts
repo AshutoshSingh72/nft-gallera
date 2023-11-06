@@ -61,9 +61,7 @@ export default function (prefix: ComputedRef<Prefix>) {
         false
       )
       totalItemDeposit.value = (
-        copies,
-        chain.tokenDecimals,
-        false
+        copies, chain.tokenDecimals
       )
     }
   })
