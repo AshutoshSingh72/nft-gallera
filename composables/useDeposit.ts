@@ -30,6 +30,7 @@ export default function (prefix: ComputedRef<Prefix>, token: TokenToMint & id, a
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
 
+  const { copies, Airdrop, price, id: nextId } = token
   const balance = ref()
 
   const collectionDeposit = ref(0)
@@ -39,7 +40,6 @@ export default function (prefix: ComputedRef<Prefix>, token: TokenToMint & id, a
 
   const totalCollectionDeposit = ref('0')
   const totalItemDeposit = ref('0')
-  const { copies } = token
   
   const chainSymbol = ref('')
 
