@@ -60,7 +60,7 @@ export default function (prefix: ComputedRef<Prefix>) {
         chain.tokenDecimals,
         false
       )
-      totalItemDeposit.value = format(
+      totalItemDeposit.value = (
         copies,
         chain.tokenDecimals,
         false
