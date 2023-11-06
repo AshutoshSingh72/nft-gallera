@@ -51,7 +51,7 @@ export default function async (prefix: ComputedRef<Prefix>) {
         metadataDeposit.value =
           api.consts.uniques.metadataDepositBase.toNumber()
       }
-const copies = token.copies
+const copies = token
       totalCollectionDeposit.value = format(
         metadataDeposit.value +
           collectionDeposit.value +
@@ -60,9 +60,8 @@ const copies = token.copies
         false
       )
       totalItemDeposit.value = format(
-        metadataDeposit.value + itemDeposit.value + existentialDeposit.value,
+        metadataDeposit.value + itemDeposit.value + existentialDeposit.value + copies.value,
         chain.tokenDecimals,
-        copies,
         false,
       )
     }
