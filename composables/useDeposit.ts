@@ -25,7 +25,7 @@ export const assignIds = <T extends TokenToMint>(tokens: T[]): (T & id)[] => {
   })
 }
 
-export default function (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) {
+export default function (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) => {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
