@@ -12,13 +12,13 @@ import {
 import format from '@/utils/format/balance'
 
 
-export const Deposit = async (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) => {
+export default function async (prefix: ComputedRef<Prefix>) {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
 
   const balance = ref()
-
+  
   const collectionDeposit = ref(0)
   const itemDeposit = ref(0)
   const metadataDeposit = ref(0)
@@ -29,9 +29,7 @@ export const Deposit = async (prefix: ComputedRef<Prefix>, token: TokenToMint & 
   
   const chainSymbol = ref('')
 
-  watchEffect(async () => {
-    const copies = token.copies;
-    console.log(copies)
+  watchEffect(async (token: TokenToMint & id, api) => {
     if (prefix.value) {
       const api = await apiInstanceByPrefix(prefix.value)
       const chain = CHAINS[prefix.value]
@@ -53,7 +51,7 @@ export const Deposit = async (prefix: ComputedRef<Prefix>, token: TokenToMint & 
         metadataDeposit.value =
           api.consts.uniques.metadataDepositBase.toNumber()
       }
-
+const copies = token.copies
       totalCollectionDeposit.value = format(
         metadataDeposit.value +
           collectionDeposit.value +
