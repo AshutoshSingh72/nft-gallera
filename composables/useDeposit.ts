@@ -11,21 +11,8 @@ import {
 } from '@/utils/api/bsx/query'
 import format from '@/utils/format/balance'
 
-export const assignIds = <T extends TokenToMint>(tokens: T[]): (T & id)[] => {
-  let lastId = 0
-  return tokens.map((token) => {
-    const { lastIndexUsed } = token.selectedCollection as MintedCollection
 
-    lastId = Math.max(lastIndexUsed, lastId)
-
-    return {
-      ...token,
-      id: ++lastId,
-    }
-  })
-}
-
-export default function (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) => {
+export default function async (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
