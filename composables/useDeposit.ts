@@ -11,13 +11,13 @@ import {
 } from '@/utils/api/bsx/query'
 import format from '@/utils/format/balance'
 
-export const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
-  const { copies, Airdrop, price, id: nextId } = token
 
-export default function async (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) {
+export default function async (prefix: ComputedRef<Prefix>) {
+  const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
+    const { copies, Airdrop, price, id: nextId } = token
 
   const balance = ref()
 
@@ -67,7 +67,7 @@ export default function async (prefix: ComputedRef<Prefix>, token: TokenToMint &
       )
     }
   })
-
+  }
   watchEffect(async () => {
     if (prefix.value) {
       const api = await apiInstanceByPrefix(prefix.value)
@@ -117,5 +117,4 @@ export default function async (prefix: ComputedRef<Prefix>, token: TokenToMint &
     totalItemDeposit,
     chainSymbol,
   }
-}
 }
