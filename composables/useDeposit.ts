@@ -12,12 +12,11 @@ import {
 import format from '@/utils/format/balance'
 
 
-export default function async (prefix: ComputedRef<Prefix>) {
-  const prepareTokenMintArgs = async (token: TokenToMint & id, api) => {
+export default function async (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
-    const { copies, Airdrop, price, id: nextId } = token
+  const copies = token.copies;
 
   const balance = ref()
 
@@ -62,12 +61,14 @@ export default function async (prefix: ComputedRef<Prefix>) {
         chain.tokenDecimals,
         false
       )
-      totalItemDeposit.value = (
-        copies
+      totalItemDeposit.value = format(
+        metadataDeposit.value + itemDeposit.value + existentialDeposit.value * copies,
+        chain.tokenDecimals,
+        false,
       )
     }
   })
-  }
+  
   watchEffect(async () => {
     if (prefix.value) {
       const api = await apiInstanceByPrefix(prefix.value)
