@@ -11,7 +11,7 @@ import {
 } from '@/utils/api/bsx/query'
 import format from '@/utils/format/balance'
 
-export default function (token: TokenToMint & id, api) {
+export default function (prefix: ComputedRef<Prefix>, token: TokenToMint & id, api) {
   const { apiInstanceByPrefix } = useApi()
   const { accountId } = useAuth()
   const { isBasilisk, isAssetHub } = useIsChain(prefix)
