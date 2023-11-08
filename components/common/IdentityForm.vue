@@ -113,7 +113,7 @@
       <NeoButton
         class="is-flex is-flex-grow-1 fixed-height"
         variant="k-accent"
-        :label="$t('identity.create')"
+        :label="hasIdentity ? $t('identity.update') : $t('identity.create')"
         :disabled="disabled || isAssetHub"
         :loading="isLoading"
         expanded
