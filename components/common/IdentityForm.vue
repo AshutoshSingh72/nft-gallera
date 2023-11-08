@@ -384,11 +384,7 @@ watch(urlPrefix, (value) => {
   selectChain.value = value
 })
 
-  const currentChain = computed(const selectedValue = selectChain.value as Prefix
-      if (selectedValue !== urlPrefix.value) {
-        setUrlPrefix(selectedValue)
-      }
-  )
+  const currentChain = computed(const selectedValue = selectChain.value as Prefix, setUrlPrefix(selectChain.value as Prefix))
   
 const { isAssetHub } = useIsChain(currentChain)
 
