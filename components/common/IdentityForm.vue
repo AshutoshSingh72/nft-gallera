@@ -384,14 +384,12 @@ watch(urlPrefix, (value) => {
   selectChain.value = value
 })
 
-  const currentChain = computed(() => selectChain.value as Prefix)
-const { isAssetHub } = useIsChain(currentChain)
-watch(currentChain, () => {
-
+  const currentChain = computed(() => selectChain.value as Prefix, watch(currentChain, () => {
   if (currentChain.value !== urlPrefix.value) {
     setUrlPrefix(currentChain.value as Prefix)
   }
-})
+}))
+const { isAssetHub } = useIsChain(currentChain)
 
   
 const socialCheck = {
