@@ -7,8 +7,10 @@ export const useIcon = () => {
         return '/token/dot.svg'
       case 'ksm':
         return '/token/ksm.svg'
-      case 'usdt':
-        return '/token/usdt.svg'
+      case 'ahp':
+        return '/token/polkadot_asset_hub.svg'
+      case 'ahk':
+        return '/token/kusama_asset_hub.svg'
       default:
         return '/token/ksm.svg'
     }
