@@ -27,6 +27,12 @@ export const useFiatStore = defineStore('fiat', {
       polkadot: {
         usd: null,
       },
+      polkadot_Asset_hub: {
+        usd: null,
+      },
+      kusama_Asset_hub: {
+        usd: null,
+      },
     },
   }),
   getters: {
