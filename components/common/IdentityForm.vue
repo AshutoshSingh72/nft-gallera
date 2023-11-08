@@ -386,7 +386,7 @@ watch(urlPrefix, (value) => {
 
   const currentChain = computed(const selectedValue = selectChain.value as Prefix
       if (selectedValue !== urlPrefix.value) {
-        setUrlPrefix(selectedValue);
+        setUrlPrefix(selectedValue)
       }
   )
   
