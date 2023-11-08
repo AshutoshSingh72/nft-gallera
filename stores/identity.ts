@@ -101,8 +101,8 @@ export const useIdentityStore = defineStore('identity', {
     multiBalances: DEFAULT_MULTI_BALANCE_STATE,
     multiBalanceNetwork: 'main-network',
     multiBalanceAssets: [
-      { chain: 'kusama' },
-      { chain: 'kusamaHub' },
+      { chain: 'kusama', token: 'AHK' },
+      { chain: 'kusamaHub', token: 'AHP' },
       { chain: 'polkadot', token: 'DOT' },
       { chain: 'polkadotHub', token: 'DOT' },
       { chain: 'basilisk', token: 'BSX' },
