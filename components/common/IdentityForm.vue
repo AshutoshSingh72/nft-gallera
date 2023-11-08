@@ -294,7 +294,7 @@ const hasIdentity = computed(() => {
   return accountId.value && (display || legal || web || twitter || riot || email);
 });
 
-const CreateIdentity: { hasIdentity?: (Identity.update) } = Identity.create
+const CreateIdentity: { hasIdentity?: (Identity.update) } = (Identity.create)
 const handleUrlPrefixChange = async () => {
   deposit.value = await fetchDeposit()
 
