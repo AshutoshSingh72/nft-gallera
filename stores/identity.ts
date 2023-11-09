@@ -12,9 +12,7 @@ const DEFAULT_BALANCE_STATE = {
   ksm: '0',
   rmrk: '0',
   snek: '0',
-  ahk: '0',
   dot: '0',
-  ahp: '0',
   usdt: '0',
   // glmr: '0',
   // movr: '0',
@@ -46,7 +44,7 @@ type ChainDetail = {
   selected: boolean
   address: string
 }
-export type ChainToken = Partial<Record<'dot' | 'ksm' | 'bsx' | 'ahp' | 'ahk', ChainDetail>>
+export type ChainToken = Partial<Record<'dot' | 'ksm' | 'bsx' | 'usdt' , ChainDetail>>
 
 interface MultiBalances {
   address: string
