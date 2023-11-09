@@ -34,8 +34,6 @@ export type ChainType =
   | 'kusama'
   | 'basilisk'
   | 'basilisk-testnet'
-  | 'kusamaHub'
-  | 'polkadotHub'
 
 type ChainDetail = {
   balance: string
@@ -101,9 +99,7 @@ export const useIdentityStore = defineStore('identity', {
     multiBalanceNetwork: 'main-network',
     multiBalanceAssets: [
       { chain: 'kusama', token: 'AHK' },
-      { chain: 'kusamaHub', token: 'AHP' },
       { chain: 'polkadot', token: 'DOT' },
-      { chain: 'polkadotHub', token: 'DOT' },
       { chain: 'usdt', token: 'USDT' },
       { chain: 'basilisk', token: 'BSX' },
       { chain: 'basilisk', token: 'KSM', tokenId: getKusamaAssetId('bsx') },
