@@ -45,7 +45,7 @@ type ChainDetail = {
   selected: boolean
   address: string
 }
-export type ChainToken = Partial<Record<'dot' | 'ksm' | 'bsx', ChainDetail>>
+export type ChainToken = Partial<Record<'dot' | 'ksm' | 'bsx' | 'ahp' | 'ahk', ChainDetail>>
 
 interface MultiBalances {
   address: string
@@ -102,9 +102,9 @@ export const useIdentityStore = defineStore('identity', {
     multiBalanceNetwork: 'main-network',
     multiBalanceAssets: [
       { chain: 'kusama', token: 'KSM' },
-      { chain: 'kusamaHub', token: 'KSM' },
+      { chain: 'kusamaHub', token: 'AHK' },
       { chain: 'polkadot', token: 'DOT' },
-      { chain: 'polkadotHub', token: 'DOT' },
+      { chain: 'polkadotHub', token: 'AHP' },
       { chain: 'basilisk', token: 'BSX' },
       { chain: 'basilisk', token: 'KSM', tokenId: getKusamaAssetId('bsx') },
     ],
