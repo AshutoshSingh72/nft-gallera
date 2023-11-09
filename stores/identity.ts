@@ -104,7 +104,7 @@ export const useIdentityStore = defineStore('identity', {
       { chain: 'kusamaHub', token: 'AHP' },
       { chain: 'polkadot', token: 'DOT' },
       { chain: 'polkadotHub', token: 'DOT' },
-      { chain: 'polkadotHub', token: 'USDT' },
+      { chain: 'usdt', token: 'USDT' },
       { chain: 'basilisk', token: 'BSX' },
       { chain: 'basilisk', token: 'KSM', tokenId: getKusamaAssetId('bsx') },
     ],
