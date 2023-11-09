@@ -12,6 +12,9 @@ interface State {
     polkadot: {
       usd: string | number | null
     }
+    usdt: {
+      usd: string | number | null
+    }
   }
 }
 
@@ -27,10 +30,7 @@ export const useFiatStore = defineStore('fiat', {
       polkadot: {
         usd: null,
       },
-      polkadot_Asset_hub: {
-        usd: null,
-      },
-      kusama_Asset_hub: {
+      usdt: {
         usd: null,
       },
     },
@@ -39,8 +39,7 @@ export const useFiatStore = defineStore('fiat', {
     getCurrentKSMValue: (state) => state.fiatPrice.kusama.usd,
     getCurrentBSXValue: (state) => state.fiatPrice.basilisk.usd,
     getCurrentDOTValue: (state) => state.fiatPrice.polkadot.usd,
-    getCurrentAHPValue: (state) => state.fiatPrice.polkadot.usd,
-    getCurrentAHKValue: (state) => state.fiatPrice.kusama.usd,
+    getCurrentUSDTValue: (state) => state.fiatPrice.polkadot.usd,
     getCurrentTokenValue: (state) => (token: string) => {
       switch (token) {
         case 'KSM':
@@ -49,10 +48,8 @@ export const useFiatStore = defineStore('fiat', {
           return state.fiatPrice.basilisk.usd
         case 'DOT':
           return state.fiatPrice.polkadot.usd
-        case 'AHP':
-          return state.fiatPrice.polkadot.usd
-        case 'AHK':
-          return state.fiatPrice.kusama.usd
+        case 'USDT':
+          return state.fiatPrice.usdt.usd
         default:
           return 0
       }
@@ -66,10 +63,8 @@ export const useFiatStore = defineStore('fiat', {
       this.fiatPrice = Object.assign({}, this.fiatPrice, bsxPrice)
       const dotPrice = await getPrice('polkadot')
       this.fiatPrice = Object.assign({}, this.fiatPrice, dotPrice)
-      const ahpPrice = await getPrice('polkadot')
-      this.fiatPrice = Object.assign({}, this.fiatPrice, dotPrice)
-      const ahkPrice = await getPrice('kusama')
-      this.fiatPrice = Object.assign({}, this.fiatPrice, ksmPrice)
+      const usdtPrice = await getPrice('usdt')
+      this.fiatPrice = Object.assign({}, this.fiatPrice, usdtPrice)
     },
     setFiatPrice(payload) {
       this.fiatPrice = Object.assign({}, this.fiatPrice, payload)
