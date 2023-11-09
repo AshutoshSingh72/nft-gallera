@@ -33,7 +33,7 @@ export const defultTokenChain: Record<string, Prefix> = {
   KSM: 'ksm',
   DOT: 'dot',
   BSX: 'bsx',
-  USDT: 'ahp'
+  USDT: 'usdt'
   // GLMR: 'glmr',
   // MOVR: 'movr',
 }
